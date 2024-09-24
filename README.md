@@ -27,8 +27,8 @@ Inserir a descrição
 
 
 ## ✔️ Tecnologias Utilizadas
-| ![Java](https://github.com/Detemann/employee_manegement/assets/105672201/b6497e63-3185-4d1a-9add-265914adefe4)<br><sub>SAP CPI</sub> |  ![SQL](https://github.com/Detemann/employee_manegement/assets/105672201/4674d324-f393-4b73-b196-884608a84049)<br><sub>SQL</sub> | <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-apps/48/intellij-icon.png" width="48" height="48"><br><sub>IntelliJ IDEA</sub> | ![Oracle Database](https://github.com/Detemann/employee_manegement/assets/105672201/bbd69044-52d4-4d8c-b756-841317d5f20c)<br><sub>Oracle Database</sub> | ![Oracle Database](https://github.com/Detemann/employee_manegement/assets/105672201/1a0f0f85-017e-4ca8-8088-9d0a7f53fe40)<br><sub>Orientação a Objetos</sub> |
-| :-----: | :-----: | :-----: | :-----: | :-----: |
+| ![SAP CI/CPI](assets/sap.png)<br><sub>SAP CI/CPI</sub> |  ![Outra]( )<br><sub>Outra</sub> | 
+| :-----: | :-----: |
 
 
 <br>
