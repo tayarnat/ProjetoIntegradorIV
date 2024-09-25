@@ -28,9 +28,10 @@ A proposta busca otimizar processos educacionais através da automação, propor
 | :---: | :---: | :---: | :---: |
 
 <br>
+![image]()
 
 ## ✔️ Tecnologias Utilizadas
-| ![SAP CI/CPI](assets/sap.png)<br><sub>SAP CI/CPI</sub> |  <img src="assets/angularjs.png" width="48" height="48"><br><sub>Angular</sub> | 
+| <img src="https://github.com/user-attachments/assets/28f99758-ac64-44eb-a3b0-ae58049af68d" width="48" height="48"><br><sub>SAP CI/CPI</sub> |  <img src="https://material.angularjs.org/latest/img/logo.svg" width="48" height="48"><br><sub>Angular</sub> | 
 | :-----: | :-----: |
 
 Além disso, a aplicação também integrará uma API de IA para o processamento dos questionários e a geração de feedbacks automáticos.
