@@ -1,0 +1,55 @@
+<div class="container">
+    <h1>Quiz Generator</h1>
+  <p-card>
+    <form [formGroup]="quizForm" (ngSubmit)="onSubmit()" class="quiz-form">
+
+      <p-inputGroup>
+        <p-inputGroupAddon>
+        <i class="pi pi-book" style="font-size: 1rem"></i>
+        </p-inputGroupAddon>
+        <input formControlName="materia" pInputText placeholder="Materia"/>
+      </p-inputGroup>
+
+      <p-inputGroup>
+        <p-inputGroupAddon>
+        <i class="pi pi-pencil" style="font-size: 1rem"></i>
+        </p-inputGroupAddon>
+        <input formControlName="assunto" pInputText placeholder="Assunto"/>
+      </p-inputGroup>
+
+      <label>Nível:</label>
+      <p-selectButton [options]="niveis" formControlName="nivel" multiple="false">
+      </p-selectButton>
+      
+      <p-inputGroup>
+        <p-inputGroupAddon>
+          <i class="pi pi-list" style="font-size: 1rem"></i>
+        </p-inputGroupAddon>
+        <input formControlName="tot_quest" pInputText placeholder="Total de Questoes" />
+      </p-inputGroup>
+      
+      <div formArrayName="tipo_quest">
+        <div *ngFor="let tipo of tipoQuestArray.controls; let i = index" [formGroupName]="i">
+          <label>Quantidade de Questões (Máximo {{ totalQuestoesDisponiveis }}):</label>
+          <p-inputNumber  type="number" formControlName="qtd_quest" [min]="0" [max]="totalQuestoesDisponiveis" />
+          
+          <label>Tipo de Questão:</label>
+          <p-selectButton [options]="tipoQuests" formControlName="tipo_quest" multiple="false"></p-selectButton>
+        </div>
+        
+        <p-button type="button" (click)="addTipoQuest()" [disabled]="totalQuestoesDisponiveis <= 0">
+          Adicionar Tipo de Questão
+        </p-button >
+      </div>
+      
+      <div *ngIf="totalQuestoesDisponiveis <= 0" class="alert alert-info">
+        Limite máximo de questões atingido.
+      </div>
+      
+      <p-button type="submit" [disabled]="totalQuestoesDisponiveis !== 0">Gerar Prova</p-button>
+      
+    </form>
+
+    <router-outlet></router-outlet>
+  </p-card>
+</div>

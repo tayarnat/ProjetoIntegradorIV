@@ -1,0 +1,46 @@
+<div id="quiz-section" *ngIf="provaGerada">
+    <p-card header="Prova Gerada" >
+        <div *ngFor="let questao of provaGerada.questoes">
+            <p-fieldset legend="Questao {{questao.id}}" >
+                <h3>{{ questao.questao }}</h3>
+                <div *ngIf="questao.tipo == 'verdadeiro_falso'">
+                    <label>
+                        <input type="radio" name="questao{{questao.id}}" (change)="onOptionChange(questao, 'Verdadeiro')" />
+                        Verdadeiro
+                    </label>
+                    <label>
+                        <input type="radio" name="questao{{questao.id}}" (change)="onOptionChange(questao, 'Falso')" />
+                        Falso
+                    </label>
+                </div>
+                <div *ngFor="let opcao of questao.opcoes">
+                    <label>
+                        <input 
+                        type="radio" 
+                        name="questao{{questao.id}}" 
+                        [value]="opcao" 
+                        (change)="onOptionChange(questao, opcao)" 
+                        />
+                        {{ opcao }}
+                    </label>
+                </div>
+                <div *ngIf="exibirExplicacao">
+                    <div *ngIf="questao.resposta_correta == questao.resposta_usuario">
+                        <p><strong>Voce Acertou!</strong></p>
+                    </div>
+                    <div *ngIf="questao.resposta_correta != questao.resposta_usuario">
+                        <p><strong>Voce Errou!</strong></p>
+                    </div>
+                    <p><strong>Resposta escolhida:</strong> {{ questao.resposta_usuario }}</p>
+                    <p-panel header="Explicacao e Gabarito" [toggleable]="true">
+                        <p><strong>Resposta correta:</strong> {{ questao.resposta_correta }}</p>
+                        <p><strong>Explicação:</strong> {{ questao.explicacao }}</p>
+                    </p-panel>
+                </div>
+            </p-fieldset>
+        </div>
+        <div>
+            <p-button type="button" (click)="corrigeProva(provaGerada)">Finalizar Prova</p-button> 
+        </div>
+    </p-card>
+</div>

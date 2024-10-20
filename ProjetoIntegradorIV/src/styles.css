@@ -1,0 +1,78 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.quiz-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+p-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+
+p-selectButton{
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+p-inputGroup,
+p-inputNumber {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+input,
+select {
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.alert {
+    width: 100%;
+    text-align: center;
+    background-color: #d1ecf1;
+    color: #0c5460;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+p-button {
+    margin-top: 20px;
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    
+}
