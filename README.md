@@ -38,16 +38,15 @@ Além disso, a aplicação também integrará uma API de IA para o processamento
 
 ## :pushpin: Organização do Projeto:
 - [Diagrams](DiagramaRelacional): Aqui está o [diagrama relacional](DiagramaRelacional/DiagramaRelacional.pdf) (lógico) do sistema.
-- [main](com/src/main/java/sarrussys/main): Diretório com os scripts do sistema:
+- [main](ProjetoIntegradorIV/src): Diretório com os scripts do sistema:
    - **Front-end**: Desenvolvido com Angular, gerará o JSON com as informações do questionário.
    - **Middleware (SAP CPI)**: Organiza os dados e os envia para a API de IA, além de receber as respostas processadas para correção.
 
 ## :pushpin: Demonstração da Aplicação
 Assista às demonstrações em vídeo da aplicação para entender seu funcionamento. Clique nos links abaixo para acessar os vídeos:
 
-- [![Video_Demonstracao: Video](https://img.shields.io/badge/-Video_Completo-red?style=flat-square&logo=Youtube&logoColor=white)](INSERIR_LINK_AQUI)
-- [![Video_Demonstracao: Video](https://img.shields.io/badge/-Relatorios-red?style=flat-square&logo=Youtube&logoColor=white)](INSERIR_LINK_AQUI)
-- [![Video_Demonstracao: Video](https://img.shields.io/badge/-Inserir_Registros-red?style=flat-square&logo=Youtube&logoColor=white)](INSERIR_LINK_AQUI)
+- [![Video_Demonstracao: Video](https://img.shields.io/badge/-Demonstrativo_Protótipo-red?style=flat-square&logo=Youtube&logoColor=white)](INSERIR_LINK_AQUI)
+- [![Video_Demonstracao: Video](https://img.shields.io/badge/-Produto_Final_MVP-red?style=flat-square&logo=Youtube&logoColor=white)](INSERIR_LINK_AQUI)
 
 ## :pushpin: Executando a Aplicação
 
