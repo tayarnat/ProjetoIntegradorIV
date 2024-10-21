@@ -28,7 +28,6 @@ A proposta busca otimizar processos educacionais através da automação, propor
 | :---: | :---: | :---: | :---: |
 
 <br>
-![image]()
 
 ## ✔️ Tecnologias Utilizadas
 | <img src="https://github.com/user-attachments/assets/28f99758-ac64-44eb-a3b0-ae58049af68d" width="48" height="48"><br><sub>SAP CI/CPI</sub> |  <img src="https://material.angularjs.org/latest/img/logo.svg" width="48" height="48"><br><sub>Angular</sub> | 
@@ -37,7 +36,7 @@ A proposta busca otimizar processos educacionais através da automação, propor
 Além disso, a aplicação também integrará uma API de IA para o processamento dos questionários e a geração de feedbacks automáticos.
 
 ## :pushpin: Organização do Projeto:
-- [Diagrams](DiagramaRelacional): Aqui está o [diagrama relacional](DiagramaRelacional/DiagramaRelacional.pdf) (lógico) do sistema.
+- [Fluxo](FluxoSistema): Aqui está o [Fluxo Aplicação](DocumentaçãoTecnica/Diagramas/fluxo_aplicacao_v01.pdf) (lógico) do sistema.
 - [main](ProjetoIntegradorIV/src): Diretório com os scripts do sistema:
    - **Front-end**: Desenvolvido com Angular, gerará o JSON com as informações do questionário.
    - **Middleware (SAP CPI)**: Organiza os dados e os envia para a API de IA, além de receber as respostas processadas para correção.
