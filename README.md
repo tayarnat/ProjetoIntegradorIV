@@ -44,7 +44,7 @@ Além disso, a aplicação também integrará uma API de IA para o processamento
 ## :pushpin: Demonstração da Aplicação
 Assista às demonstrações em vídeo da aplicação para entender seu funcionamento. Clique nos links abaixo para acessar os vídeos:
 
-- [![Video_Demonstracao: Video](https://img.shields.io/badge/-Demonstrativo_Protótipo-red?style=flat-square&logo=Youtube&logoColor=white)](INSERIR_LINK_AQUI)
+- [![Video_Demonstracao: Video](https://img.shields.io/badge/-Demonstrativo_Protótipo-red?style=flat-square&logo=Youtube&logoColor=white)](https://youtu.be/EUuyXVhOCwQ)
 - [![Video_Demonstracao: Video](https://img.shields.io/badge/-Produto_Final_MVP-red?style=flat-square&logo=Youtube&logoColor=white)](INSERIR_LINK_AQUI)
 
 ## :pushpin: Executando a Aplicação
