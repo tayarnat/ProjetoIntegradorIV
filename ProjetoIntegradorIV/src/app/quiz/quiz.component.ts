@@ -7,12 +7,16 @@ import {
   RouterLink,
   RouterLinkActive,
 } from '@angular/router';
-import { NgIf, NgFor, isPlatformBrowser } from '@angular/common';
+import { NgIf, NgFor, isPlatformBrowser, NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FieldsetModule } from 'primeng/fieldset';
 import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { CardModule } from 'primeng/card';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { MessagesModule } from 'primeng/messages';
+import { ScrollTopModule } from 'primeng/scrolltop';
 
 @Component({
   selector: 'app-quiz',
@@ -22,6 +26,10 @@ import { CardModule } from 'primeng/card';
   imports: [
     NgIf,
     NgFor,
+    NgClass,
+    ProgressSpinnerModule,
+    ScrollTopModule,
+    MessagesModule,
     RouterOutlet,
     FormsModule,
     RouterLink,
@@ -30,11 +38,21 @@ import { CardModule } from 'primeng/card';
     ButtonModule,
     PanelModule,
     CardModule,
+    RadioButtonModule,
   ],
 })
 export class QuizComponent implements OnInit {
   provaGerada: any;
   exibirExplicacao: boolean = false;
+  isLoading: boolean = true;
+  messages = [
+    {
+      severity: 'error',
+      detail:
+        'Ops! Um erro ao gerar a sua prova! \n' +
+        'Por favor tente voltar a pagina do gerador de provas e crie uma prova novamente.',
+    },
+  ];
 
   constructor(
     private router: Router,
@@ -49,7 +67,9 @@ export class QuizComponent implements OnInit {
       if (requestData) {
         this.gerarProva(requestData);
       } else {
+        this.isLoading = false;
         console.log('Nenhum dado foi recebido');
+        // this.isLoading = false;
       }
     }
   }
@@ -71,10 +91,12 @@ export class QuizComponent implements OnInit {
       .subscribe(
         (res) => {
           this.provaGerada = res;
+          this.isLoading = false;
           console.log(res); // Armazena a prova gerada para exibição
         },
         (error) => {
           console.error('Erro ao gerar a prova', error);
+          this.isLoading = false;
         }
       );
   }
@@ -106,5 +128,13 @@ export class QuizComponent implements OnInit {
 
   onOptionChange(questao: any, opcao: string) {
     questao.resposta_usuario = opcao.charAt(0); // Armazena apenas a primeira letra da opção
+  }
+
+  voltaAoGenerator() {
+    this.router.navigate(['/']);
+  }
+
+  gerarNovamente() {
+    window.location.reload();
   }
 }

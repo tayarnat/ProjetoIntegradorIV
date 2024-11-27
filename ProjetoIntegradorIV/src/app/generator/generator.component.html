@@ -1,0 +1,67 @@
+<div class="grid full-page">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h1 class="text-center" style="font-family: 'Courier New', Courier, monospace" font-size="larger">Quiz Generator
+        </h1>
+        <p-card>
+            <form [formGroup]="quizForm" (ngSubmit)="onSubmit()" class="formgrid grid fluid">
+                <div class="field col-fixed w-6">
+                    <p-inputGroup>
+                        <p-inputGroupAddon>
+                            <i class="pi pi-book" style="font-size: 1rem"></i>
+                        </p-inputGroupAddon>
+                        <input formControlName="materia" pInputText placeholder="Materia" />
+                    </p-inputGroup>
+                </div>
+                <div class="field col-fixed w-6">
+                    <p-inputGroup>
+                        <p-inputGroupAddon>
+                            <i class="pi pi-pencil" style="font-size: 1rem"></i>
+                        </p-inputGroupAddon>
+                        <input formControlName="assunto" pInputText placeholder="Assunto" />
+                    </p-inputGroup>
+                </div>
+                <div class="field col-fixed w-12">
+                    <label>Nível:</label>
+                    <p-selectButton [options]="niveis" formControlName="nivel" multiple="false">
+                    </p-selectButton>
+                </div>
+                <div class="field col-fixed w-12">
+                    <p-inputGroup>
+                        <label>Numero de questoes: (Maximo 15)</label>
+                        <p-inputNumber formControlName="tot_quest" [min]="0" [max]="15" />
+                    </p-inputGroup>
+                </div>
+                <ng-container *ngIf="mostrarTipoQuest" formArrayName="tipo_quest">
+                    <ng-container *ngFor="let tipo of tipoQuestArray.controls; let i = index" [formGroupName]="i">
+                        <div class="field col-fixed w-6">
+                            <label>Quantidade de Questões (Máximo {{ totalQuestoesDisponiveis }}):</label>
+                            <p-inputNumber formControlName="qtd_quest" [min]="0" [max]="totalQuestoesDisponiveis" />
+                        </div>
+                        <div class="field col-fixed w-6">
+                            <label>Tipo de Questão:</label>
+                            <p-selectButton [options]="tipoQuests" formControlName="tipo_quest"
+                                multiple="false"></p-selectButton>
+                        </div>
+                    </ng-container>
+                    <div class="col-fixed w-12">
+                        <p-messages *ngIf="totalQuestoesDisponiveis <= 0" [(value)]="messages" [enableService]="false"
+                            [closable]="false" />
+                    </div>
+                </ng-container>
+                <div class="col-fixed w-12 flex gap-2">
+                    <p-button type="button" (click)="addTipoQuest()" [disabled]="totalQuestoesDisponiveis <= 0">
+                        Adicionar Tipo de Questão
+                    </p-button>
+                    <p-button type="submit" [disabled]="totalQuestoesDisponiveis !== 0">Gerar Prova</p-button>
+                </div>
+                <div class="field col-fixed w-12">
+                    <p-messages [(value)]="messagesCampo" [enableService]="false" [closable]="true" />
+
+                </div>
+            </form>
+            <router-outlet></router-outlet>
+        </p-card>
+    </div>
+    <div class="col-3"></div>
+</div>
